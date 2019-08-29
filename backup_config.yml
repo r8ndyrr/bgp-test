@@ -1,0 +1,14 @@
+---
+- name: "PLAY 1: Remove BGP config"
+  hosts: routers
+  tasks:
+
+   - name: Get running config
+     ios_command:
+       commands: copy run start    
+     register: show_run
+
+#   - name: Save config to file
+#     copy:
+#       content: "{{ show_run.stdout[0] }}"
+#       dest: "backups/{{inventory_hostname}}-{{ansible_facts.date_time.}}.txt"

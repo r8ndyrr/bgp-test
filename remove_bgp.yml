@@ -1,0 +1,14 @@
+---
+- name: "PLAY 1: Remove BGP config"
+  hosts: routers, servers
+  tasks:
+    - name: "TASK 1: Log into routers and remove config"
+      ios_config:
+        lines:
+          - "no router bgp 2"
+      register: bgp_updates
+
+    - name: "TASK 2: Print changes if they occur"
+      debug:
+        var: bgp_updates.commands
+      when: "bgp_updates.commands is defined"
