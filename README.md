@@ -1,2 +1,8 @@
-# bgp-test
-Create 2 BGP speaking routers via Ansible
+# Hi guys
+
+Just learning about ansible and experimenting with creating a BGP session between two Cisco routers.
+
+All  via Ansible.
+
+Lab environment GNS3.
+
