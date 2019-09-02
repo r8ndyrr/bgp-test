@@ -5,7 +5,7 @@
     - name: "TASK 1: Log into routers and remove config"
       ios_config:
         lines:
-          - "no router bgp 1"
+          - "no router bgp {{ bgp_asn_1 }}"
       register: bgp_updates
 
     - name: "TASK 2: Print changes if they occur"
@@ -20,7 +20,7 @@
     - name: "TASK 1: Log into routers and remove config"
       ios_config:
         lines:
-          - "no router bgp 2"
+          - "no router bgp {{ bgp_asn_2 }}"
       register: bgp_updates
 
     - name: "TASK 2: Print changes if they occur"
